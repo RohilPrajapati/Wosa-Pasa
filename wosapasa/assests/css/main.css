@@ -3,6 +3,8 @@
     margin: 0;
     font-family: sans-serif
 }
+
+/* Sign_up_Page */
 .signup_form{
     width: 350px;
     margin: 4px auto;
@@ -44,3 +46,15 @@ button{
 button:hover{
     opacity: 70%;
 }
+
+/* Login page */
+
+.login_page{
+    width: 350px;
+    margin: 4px auto;
+}
+
+.login_page img{
+    width: 5%;
+}
+
