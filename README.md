@@ -3,4 +3,4 @@ college project
 
 
 ## Database Design 
-[link](www.google.com)
+[link](https://app.dbdesigner.net/designer/schema/500533)
