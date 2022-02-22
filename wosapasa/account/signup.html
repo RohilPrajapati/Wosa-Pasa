@@ -10,22 +10,22 @@
 <body>
     <div class="signup_form">
         <h2>Sign Up</h2>
-        <form action="#">
+        <form action="register.php" method="POST">
             <div class="input-block">
                 <img src="../assests/image/user-solid.svg" alt="">
-                <input class="form_input" type="text" placeholder="Username"> 
+                <input class="form_input" name="username" type="text" placeholder="Username"> 
             </div>
             <div class="input-block">
                 <img src="../assests/image/envelope-solid.svg">
-                <input class="form_input" type="email" placeholder="Email">
+                <input class="form_input" name="email"  type="email" placeholder="Email">
             </div>
             <div class="input-block">
                 <img src="../assests/image/lock-solid.svg">
-                <input class="form_input" type="password" placeholder="Password">
+                <input class="form_input" name="password" type="password" placeholder="Password">
             </div>
             <div class="input-block">
                 <img src="../assests/image/lock-solid.svg">
-                <input class="form_input" type="password" placeholder="Confirm Password">
+                <input class="form_input" name="co_password" type="password" placeholder="Confirm Password">
             </div>
             <button type="submit">Signup</button>
         </form>
