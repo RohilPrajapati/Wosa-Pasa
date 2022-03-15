@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['id']){
-    echo "you are login";
+    header("location:/admin/dashboard.php");
 }else{
     header("location:/admin/login.php");
 }
