@@ -16,9 +16,10 @@
             <div class="p_detail_text_col">
                 <h1>Product title</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, debitis quam beatae quidem dolore nobis veritatis. Odio officia, fuga necessitatibus voluptatum natus laborum provident. Sit laborum maiores blanditiis. Non mollitia incidunt ipsa voluptas animi nulla ea maxime libero cum nisi?</p>
-                <button>-</button>
-                <input class="qty_input" type="text" readonly value=0>
-                <button>+</button>
+                <span>Quantity :</span>
+                <button id="sub" onclick="subQty()">-</button>
+                <input id="qty" class="qty_input" type="text" readonly value=0>
+                <button id="add" onclick="addQty()">+</button><br>
                 <input class="detailview_btn" type="submit" value="Add to Cart">
                 <input class="detailview_btn buy_btn" type="submit" value="Buy Now">
             </div>

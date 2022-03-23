@@ -12,14 +12,15 @@
         $q_select = "SELECT * FROM users where email='$email'";
         $users = mysqli_query($conn,$q_select);
         if (mysqli_num_rows($users) == 0){
-            $q_insert = "INSERT INTO users (username, email, password) VALUES ('$username','$email', '$h_password')";
+            $q_insert = "INSERT INTO users (username, email, password, is_admin) VALUES ('$username','$email', '$h_password','1')";
             if ($result = mysqli_query($conn,$q_insert)){
                 // redirectAlertMessage('User has been register','login.php');
                 echo "
                 <h3 class='server_success'>
-                User has been register. <a href='login.php'>Login</a>   
+                    admin user has been register.</a>
                 </h3>
                 ";
+                header('refresh:2;url=users.php');
             }
             else{
                 // redirectAlertMessage('Error while inserting:'.$conn->error,'signup.html');
@@ -42,47 +43,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <script src="/assets/js/main.js"></script>
-    <script src="https://kit.fontawesome.com/b3b8c8e375.js" crossorigin="anonymous"></script>
+    <?php require_once 'head.php'; ?>
+    <title>Add Admin User</title>
 </head>
 <body>
-    <?php include_once '../assets/component/topnav.php';?>
-    <div class="container">
-        <div id="server_msg">
-            
-            </div>
-        <div class="form">
-            <h2 class="header">Sign Up</h2>
+    <div class="main_container">
+        <?php include_once 'admin_nav.php';?>
+        <div class="container">
+            <h3 class="header">Add Admin User</h3>
             <form action="" id="form" method="POST" onsubmit="event.preventDefault(); validateRegistration()">
-                <div class="input-block">
+                <div class="input_block">
                     <img src="/assets/image/user-solid.svg" alt="">
                     <input class="form_input" id="username" name="username" type="text" placeholder="Username"> 
                 </div>
                 <div class="error" id="username_error"></div>
-                <div class="input-block">
+                <div class="input_block">
                     <img src="/assets/image/envelope-solid.svg">
                     <input class="form_input" id="email" name="email"  type="email" placeholder="Email">
                 </div>
                 <div class="error" id="email_error"></div>
-                <div class="input-block">
+                <div class="input_block">
                     <img src="/assets/image/lock-solid.svg">
                     <input class="form_input" id="password" name="password" id="password" type="password" placeholder="Password">
                     <i class="far fa-eye eye_icon" id="togglePassword" onclick="passwordToggler()"></i>
                 </div>
-                <div class="input-block">
+                <div class="input_block">
                     <img src="/assets/image/lock-solid.svg">
                     <input class="form_input" id="c_password" name="co_password" id="co_password" type="password" placeholder="Confirm Password">
                     <i class="far fa-eye eye_icon" id="togglePassword" onclick="cpasswordToggler()"></i>
                 </div>
                 <div class="error" id="password_error"></div>
-                <button type="submit">Signup</button>
+                <input class="btn" type="submit" value="Add Admin">
             </form>
         </div>
     </div>
+    
 </body>
 </html>

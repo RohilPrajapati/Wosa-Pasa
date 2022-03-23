@@ -14,13 +14,22 @@
             $user = mysqli_fetch_array($result);
             if (password_verify($password,$user['password'])){
                 if ($user['is_admin']){
-                    session_start();
-                    $_SESSION['id'] = $user['user_id'];
-                    header("location:dashboard.php");
+                    if($user['status']){
+                        session_start();
+                        $_SESSION['id'] = $user['user_id'];
+                        header("location:dashboard.php");
+                    }
+                    else{
+                        echo "
+                    <h3 class='server_error'>   
+                        User has been disable !!
+                    </h3>
+                    ";
+                    }
                 }else{
                     echo "
                     <h3 class='server_error'>   
-                    You are not admin !
+                    You are not admin ! <a href='/account/login.php'>Customer Login</a>
                     </h3>
                     ";
                 }
@@ -37,7 +46,7 @@
             // email not register
             echo "
                 <h3 class='server_error'>
-                Username or email does not exists
+                Username or email does not exists <a href='signup.php'>Register</a>
                 </h3>
                 ";
         }
@@ -76,3 +85,6 @@
     </div>
 </body>
 </html>
+<?php
+    $conn->close();
+?>

@@ -1,23 +1,29 @@
 <div class="admin_nav">
     <h1>Wosa: Pasa:</h1>
     <ul class="admin_nav_menu">
-    <a href="dashboard.php" class="admin_nav_link">
-        <div class="admin_nav_item">
-            <i class="fa-brands fa-dashcube"></i>
-            <li>Dashboard</li>
-        </div>
+        <a href="dashboard.php" class="admin_nav_link">
+            <div class="admin_nav_item">
+                <i class="fa-brands fa-dashcube"></i>
+                <li>Dashboard</li>
+            </div>
         </a>
         <a href="profile.php" class="admin_nav_link">
-        <div class="admin_nav_item">
-            <i class="fa-solid fa-user"></i>
-            <li>Profile</li>
-        </div>
+            <div class="admin_nav_item">
+                <i class="fa-solid fa-user"></i>
+                <li>Profile</li>
+            </div>
+        </a>
+        <a href="category.php" class="admin_nav_link">
+            <div class="admin_nav_item">
+            <i class="fa-solid fa-file-lines"></i>
+            <li>Category</li>
+            </div>
         </a>
         <a href="product.php" class="admin_nav_link">
-        <div class="admin_nav_item">
-            <i class="fa-solid fa-shirt"></i>
-            <li>Product</li>
-        </div>
+            <div class="admin_nav_item">
+                <i class="fa-solid fa-shirt"></i>
+                <li>Product</li>
+            </div>
         </a>
         <a href="users.php" class="admin_nav_link">
             <div class="admin_nav_item">

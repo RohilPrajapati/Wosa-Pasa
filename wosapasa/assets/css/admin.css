@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+.main_container{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+.admin_nav{
+    position: fixed;
+    background-color: #495057;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+}
+
+.admin_nav h1{
+    margin: 10px auto   ;
+}
+.container{
+    margin-left: 22%;
+    margin-right: 15px;
+    width: 80%;
+    text-align: justify;
+    min-height: 100vh;
+}
+.admin_nav h1{
+    color: #e9ecef;
+}
+.admin_nav_menu{
+    margin: 20px auto;
+    list-style: none;
+}
+.admin_nav_item{
+    line-height: 40px;
+    padding: 5px 20px;
+    text-align: left;
+    display: flex;
+}
+.admin_nav_item i{
+    color: #e9ecef;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+}
+.admin_nav_item li{
+    width: 80%;
+    color: #e9ecef;
+    text-decoration: none;
+}
+.admin_nav_menu a{
+    text-decoration: none;
+}
+.admin_nav_item:hover{
+    background-color: #6c757d;
+}
+
+.header{
+    margin: 10px auto;
+    color: #495057;
+}
+
+table, tr, th, td{
+    border: 1px solid #495057;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px 20px;
+    max-width: 450px;
+    word-wrap: break-word;
+}
+td img{
+    height: 80px;
+    width: 80px;
+}
+th{
+    background-color: #495057;
+    color: #e9ecef;
+    border: none;
+    text-align: center;
+}
+table{
+    margin: 30px 0px;
+}
+.btn{
+    margin: 10px 0px;
+    background-color: #495057;
+    color: #e9ecef;
+    padding: 13px 30px;
+    border-radius: 5px 20px;
+    border: none;
+        text-decoration: none;
+}
+.btn:hover{
+    background-color: #6c757d;
+    cursor: pointer;
+}
+.info{
+    margin-top: 30px;
+    background-color: #e9ecef;
+    padding: 30px 20px;
+    border-radius: 10px;
+    line-height: 30px;
+}
+
+.error{
+    color:red;
+}
+.server_error{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    padding: 20px 50px;
+    color:red; 
+    text-align: center;
+    background-color: rgba(241, 112, 112, 0.226);
+    line-height: 30px;
+    border-bottom: 2px solid red;
+}
+.server_success{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    padding: 20px 50px;
+    color:rgb(6, 134, 6); 
+    text-align: center;
+    background-color: rgba(108, 243, 164, 0.226);
+    line-height: 30px;
+    border-bottom: 2px solid rgb(6, 134, 6);
+}
+.danger_btn{
+    background-color: #e63946;
+    color: #e9ecef;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.success_btn{
+    background-color: #52b788;
+    color: #e9ecef;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.primary_btn{
+    background-color: #0077b6;
+    color: #e9ecef;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+.pagination_btn{
+    background-color: #6c757d;
+    text-decoration: none;
+    color: #e9ecef;
+    margin: 0px 5px;
+    padding: 3px 8px;
+    font-size: 22px;
+    border-radius: 5px;
+}
+
+#form{
+    width: 60%;
+}
+
+.input_block{
+    display: flex;
+    border-bottom: 2px solid rgba(21, 3, 41, 0.541);
+}
+.input_block img{
+    width: 20px;
+}
+.form_input{
+    width: 95%;
+    padding: 5px 20px;
+    margin: 15px 0px;
+    font-size: 18px;
+    border: none;
+}
+.form_input:focus{
+    outline: none;
+}
+.eye_icon{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.category_input{
+    width: 450px;
+    height: 40px;
+    color: #495057;
+    border: 1px solid #495057;
+    border-radius: 5px 20px;
+    padding: 0px 10px;
+}
+.category_input:focus{
+    outline: 2px solid #6c757d;
+}
+.input_lg, .input_sm{
+    height: 40px;
+    margin: 10px 0px;
+    border: 1px solid #495057;
+    color: #495057;
+    padding: 0px 10px;
+}
+.input_lg{
+    width: 70%;
+    height: 40px;
+    margin: 10px 0px;
+    border: 1px solid #495057;
+    color: #495057;
+    padding: 0px 10px;
+}
+.input_lg:focus, .input_sm:focus, .product_insert_descpt:focus{
+    outline: 2px solid #495057;
+}
+.input_sm{
+    width: 40%;
+}
+.input_file{
+    margin: 10px 0px;
+    height: 30px;
+    width: 150px;
+}
+.product_insert_descpt{
+    padding: 0px 10px;
+    width: 70%;
+    height: 250px;
+    resize: none;
+}

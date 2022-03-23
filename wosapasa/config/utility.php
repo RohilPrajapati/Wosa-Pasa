@@ -1,5 +1,5 @@
 <?php
-    require "dbconfig.php";
+    require_once "dbconfig.php";
     function redirectAlertMessage($msg,$url){
         echo "
             <script>
@@ -7,6 +7,18 @@
             </script>
         ";
         header('refresh:0;url= '.$url);
+    }
+
+    function fetch_user($id,$conn){
+        $q_user = "SELECT * from users  where user_id ='$id'";
+        $result = mysqli_query($conn,$q_user);
+        if(mysqli_num_rows($result)!=0){
+            $user = mysqli_fetch_assoc($result);
+            return $user;
+        }else{
+            die("User not found");
+        }
+        
     }
     // function isAdmin(){
     //     if(!isset($_SESSION['id'])){

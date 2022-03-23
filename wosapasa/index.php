@@ -1,3 +1,7 @@
+<?php 
+    require_once 'config/utility.php';
+    require_once 'config/dbconfig.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +15,15 @@
         <div class="row">
             <div class="side_category">
                 <ul>
-                    <li><a href="#">Men's Clothing</a></li>
-                    <li><a href="#">Women's Clothing</a></li>
-                    <li><a href="#">Children clothing</a></li>
-                    <li><a href="#">Jean</a></li>
-                    <li><a href="#">T-shirt</a></li>
-                    <li><a href="#">Shirt</a></li>
-                    <li><a href="#">Pant</a></li>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 1</a></li>
+                    <?php
+                        $q_fetch_category = "select * from categories where status = 1 limit 11";
+                        $result = mysqli_query($conn,$q_fetch_category);
+                        while ($category = mysqli_fetch_assoc($result)){
+                    ?>
+                    <li><a href="#"><?= $category['name'] ?></a></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
             <div class="carousel">
@@ -40,16 +42,16 @@
         <div class="product_cards">
             
             <div class="card">
-            <a href="/detailview.php">
-                <img class="card-image" src="assets/image/shirt.jpg" alt="Image of product">
-                <div class="cardText">
-                    <div class="cardTitle">
-                        Plain Blue shirt ajdlfjalsf asdfjaskflsa salfdkaslk;
+                <a href="/detailview.php">
+                    <img class="card-image" src="assets/image/shirt.jpg" alt="Image of product">
+                    <div class="cardText">
+                        <div class="cardTitle">
+                            Plain Blue shirt ajdlfjalsf asdfjaskflsa salfdkaslk;
+                        </div>
+                        <div class="card_info_action">
+                            <p class="offer-price">Rs 999</p>
+                        </div>
                     </div>
-                    <div class="card_info_action">
-                        <p class="offer-price">Rs 999</p>
-                    </div>
-                </div>
                 </a>
             </div>
             
@@ -102,6 +104,7 @@
         </div>
 
     </div>
+    <?php require_once 'assets/component/footer.php'; ?>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/carousel.js"></script>
 </body>

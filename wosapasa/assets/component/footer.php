@@ -1,11 +1,24 @@
 <div class="footer">
-    <div class="footer_col">
-        
-    </div>
-    <div class="footer_col">
-
-    </div>
-    <div class="footer_col">
-
+    <div class="footer_content">
+        <div class="footer_col">
+            <a href="#" class="footer_link">About Us</a><br>
+            <a href="feedback.php" class="footer_link">Send Feedback</a>
+        </div>
+        <div class="footer_col">
+            <h3 class="footer_header">Categories</h3>
+            <ul>
+                <li><a href="" class="footer_link">Shirts</a></li>
+                <li><a href="" class="footer_link">Jeans</a></li>
+                <li><a href="" class="footer_link">Jackets</a></li>
+                <li><a href="" class="footer_link">T-Shirt</a></li>
+            </ul>
+        </div>
+        <div class="footer_col">
+            <h3 class="footer_header">Contact Us</h3>
+            <ul>
+                <li><a href="" class="footer_link">E-mail : royalprajapati111@gmail.com</a></li>
+                <li><a href="#" class="footer_link">Phone Number : 9841123456</a></li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 
- CREATE TABLE `user` (
+ CREATE TABLE `users` (
 	`user_id` INT NOT NULL AUTO_INCREMENT,
 	`username` varchar(255) NOT NULL,
 	`email` varchar(255) NOT NULL UNIQUE,
@@ -9,4 +9,19 @@
 	PRIMARY KEY (`user_id`)
 );
 
+ALTER TABLE users
+ADD status BOOLEAN DEFAULT 1; 
+ALTER TABLE users
+MODIFY COLUMN status BOOLEAN DEFAULT 1; 
+
 INSERT INTO user(username,email,password,is_admin,is_customer) VALUES ('rohil','rohilprajapati@gmail.com','$2y$10$SrKFxhCgNxBad.lnBppFjOvTufWRcxW9k/DlCZAkksr68sSrPo/ca',1,0)
+
+
+CREATE TABLE categories (
+`c_id` INT NOT NULL AUTO_INCREMENT,
+`name` varchar(255) NOT NULL UNIQUE,
+status BOOLEAN DEFAULT 1 NOT NULL,
+PRIMARY KEY (`c_id`)
+);
+
+INSERT INTO categories (name) values ('$c_name');
