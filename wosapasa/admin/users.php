@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="main_container">
-        <?php require_once 'admin_nav.php'; ?>
+        <?php 
+        $page_title='user';
+        require_once 'admin_nav.php'; ?>
         <div class="container">
             <input type="button" onclick="window.location.href='addAdminUser.php'" value="Add Admin User" class="btn">
             

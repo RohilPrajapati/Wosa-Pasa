@@ -1,4 +1,14 @@
+<link rel="stylesheet" href="/assets/css/main.css">
 <?php
+    session_start();
+    if(isset($_SESSION['id'])){
+        echo "
+            <h3 class='server_error'>   
+                You are already login !!
+            </h3>
+            ";
+            die();
+    }  
     require_once '../config/dbconfig.php';
     require_once '../config/utility.php';
     if($_POST){
@@ -58,7 +68,7 @@
 </head>
 <body>
     <?php 
-        $page= 'login   ';
+        $page= 'login';
         include_once '../assets/component/topnav.php'; 
     ?>
     <div class="container">

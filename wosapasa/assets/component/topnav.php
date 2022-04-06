@@ -16,10 +16,16 @@
     <a href="../../index.php"><img class="nav_logo" src ="/assets/image/design_wosa_pasa.png" alt="logo"></a>
     <i  id="nav_icon" class="fa-solid fa-bars fa-lg" onclick="nav_toggler()"></i>
     <ul class="nav_menu" id="nav_menu">
+        <form action="/search.php" id="seachForm" class="search" onsubmit="event.preventDefault(); searchValidation()">
+            <input type="text" id="search_input" name ="q" class="searchBox" placeholder="Search" 
+                value="<?php if(isset($_GET['q'])){ echo $_GET['q']; }?>"
+            >
+            <input class="searchIcon" style="font-family: FontAwesome" value="&#xf002;" type="submit">
+        </form>
         <li class="nav_item <?php if($page == 'home'){echo 'active';} ?>"><a class="nav_link" href="/">Home</a></li>
-        <li class="nav_item nav_item <?php if($page == 'cart'){echo 'active';} ?>"><a class="nav_link" href="">Cart</a></li>
         <?php if(isset($_SESSION['id'])){?>
-        <li class="nav_item nav_profile <?php if($page == 'profile'){echo 'active';} ?>"><a class="nav_link" href="/account/profile.php"><?= $user['username'] ?></a>
+            <li class="nav_item nav_item <?php if($page == 'cart'){echo 'active';} ?>"><a class="nav_link" href="/cart.php">Cart</a></li>
+            <li class="nav_item nav_profile <?php if($page == 'profile'){echo 'active';} ?>"><a class="nav_link" href="/account/profile.php"><?= $user['username'] ?></a>
         <ul class="sub_menu">
                 <li class="sub_nav_item"><a class="nav_link" href="/account/logout.php">Logout</a></li>
             </ul>

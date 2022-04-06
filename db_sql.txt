@@ -25,3 +25,116 @@ PRIMARY KEY (`c_id`)
 );
 
 INSERT INTO categories (name) values ('$c_name');
+
+CREATE TABLE `products` (
+	`product_id` INT NOT NULL AUTO_INCREMENT,
+	`title` varchar(255) NOT NULL,
+	`description` TEXT(1000) NOT NULL,
+	`image` varchar(255) NOT NULL,
+	`c_id` INT NOT NULL,
+	`price` INT NOT NULL,
+	`gender` varchar(10) NOT NULL,
+	`number_of_stock` INT NOT NULL,
+	`active_status` BOOLEAN NOT NULL,
+	PRIMARY KEY (`product_id`),
+	Foreign KEY (c_id) REFERENCES categories(c_id)
+);
+
+INSERT INTO products (title,description,image,c_id,price,gender,number_of_stock,active_status) values ('');
+
+
+CREATE TABLE `carts` (
+	`cart_id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	`product_id` INT NOT NULL,
+	`user_id` INT NOT NULL,
+	`quantity` INT NOT NULL,
+	FOREIGN KEY (`product_id`) REFERENCES `products`(`product_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`)
+);
+ALTER TABLE `cart` ADD CONSTRAINT `cart_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`);
+
+ALTER TABLE `cart` ADD CONSTRAINT `cart_fk1` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`);
+
+INSERT INTO carts (product_id,user_id,quantity) values ();
+
+
+
+
+
+
+
+CREATE TABLE `user` (
+	`user_id` INT NOT NULL AUTO_INCREMENT,
+	`username` varchar(255) NOT NULL,
+	`email` varchar(255) NOT NULL UNIQUE,
+	`password` varchar(255) NOT NULL,
+	`is_admin` BOOLEAN NOT NULL,
+	`is_customer` BOOLEAN NOT NULL,
+	`phone_num` varchar(15) NOT NULL,
+	`address` varchar(150) NOT NULL,
+	PRIMARY KEY (`user_id`)
+);
+
+CREATE TABLE `product` (
+	`product_id` INT NOT NULL AUTO_INCREMENT,
+	`title` varchar(255) NOT NULL,
+	`description` TEXT(1000) NOT NULL,
+	`image` varchar(255) NOT NULL,
+	`category` INT NOT NULL,
+	`price` INT NOT NULL,
+	`gender` varchar(10) NOT NULL,
+	`number_of_stock` INT NOT NULL,
+	`active_status` BOOLEAN NOT NULL,
+	PRIMARY KEY (`product_id`)
+);
+
+CREATE TABLE `order` (
+	`order_id` INT NOT NULL AUTO_INCREMENT,
+	`order_price` INT NOT NULL,
+	`quantity` INT NOT NULL,
+	`order_status` varchar(100) NOT NULL,
+	`user_id` INT NOT NULL,
+	`product_id` INT NOT NULL,
+	PRIMARY KEY (`order_id`)
+);
+
+CREATE TABLE `category` (
+	`c_id` INT NOT NULL AUTO_INCREMENT,
+	`name` varchar(255) NOT NULL UNIQUE,
+	PRIMARY KEY (`c_id`)
+);
+
+CREATE TABLE `cart` (
+	`cart_id` INT NOT NULL,
+	`product_id` INT NOT NULL,
+	`user_id` INT NOT NULL,
+	`quantity` INT NOT NULL
+);
+
+CREATE TABLE `wishlist` (
+	`wishlist_id` INT NOT NULL AUTO_INCREMENT,
+	`product_id` INT NOT NULL,
+	`user_id` INT NOT NULL,
+	PRIMARY KEY (`wishlist_id`)
+);
+
+ALTER TABLE `product` ADD CONSTRAINT `product_fk0` FOREIGN KEY (`category`) REFERENCES `category`(`c_id`);
+
+ALTER TABLE `order` ADD CONSTRAINT `order_fk0` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`);
+
+ALTER TABLE `order` ADD CONSTRAINT `order_fk1` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`);
+
+ALTER TABLE `cart` ADD CONSTRAINT `cart_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`);
+
+ALTER TABLE `cart` ADD CONSTRAINT `cart_fk1` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`);
+
+ALTER TABLE `wishlist` ADD CONSTRAINT `wishlist_fk0` FOREIGN KEY (`product_id`) REFERENCES `product`(`product_id`);
+
+ALTER TABLE `wishlist` ADD CONSTRAINT `wishlist_fk1` FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`);
+
+
+
+
+
+
+

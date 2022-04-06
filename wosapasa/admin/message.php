@@ -9,7 +9,10 @@
 </head>
 <body>
     <div class="main_container">
-        <?php require_once 'admin_nav.php'; ?>
+        <?php 
+            $page_title = 'feedback';
+            require_once 'admin_nav.php'; 
+        ?>
         <div class="container">
             <h1 class="header">This is messaage</h1>
         </div>

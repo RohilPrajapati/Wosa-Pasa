@@ -14,7 +14,9 @@
 </head>
 <body>
     <div class="main_container">
-        <?php require_once 'admin_nav.php'; ?>
+        <?php 
+        $page_title='profile';
+        require_once 'admin_nav.php'; ?>
         <div class="container">
             <div class="info">
                     <b>Username : </b>

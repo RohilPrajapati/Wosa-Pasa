@@ -9,7 +9,9 @@
 </head>
 <body>
     <div class="main_container">
-        <?php require_once 'admin_nav.php'; ?>
+        <?php 
+        $page_title='order';
+        require_once 'admin_nav.php'; ?>
         <div class="container">
             <h1 class="header">This is order</h1>
         </div>

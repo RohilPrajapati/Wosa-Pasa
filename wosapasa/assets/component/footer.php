@@ -1,8 +1,9 @@
 <div class="footer">
     <div class="footer_content">
         <div class="footer_col">
-            <a href="#" class="footer_link">About Us</a><br>
-            <a href="feedback.php" class="footer_link">Send Feedback</a>
+            <a href="/aboutUs.php" class="footer_link">About Us</a><br>
+            <a href="feedback.php" class="footer_link">Send Feedback</a><br>    
+            <a href="/admin/" class="footer_link">Developer</a>
         </div>
         <div class="footer_col">
             <h3 class="footer_header">Categories</h3>

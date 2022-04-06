@@ -40,6 +40,9 @@
     text-align: left;
     display: flex;
 }
+.admin_nav .active{
+    background-color: #6c757d;
+}
 .admin_nav_item i{
     color: #e9ecef;
     line-height: 40px;
@@ -108,6 +111,7 @@ table{
 
 .error{
     color:red;
+    display: none;
 }
 .server_error{
     position: absolute;
@@ -136,18 +140,30 @@ table{
     color: #e9ecef;
     padding: 5px 10px;
     text-decoration: none;
+    margin: 20px 0px;
+    line-height: 30px;
+
 }
 .success_btn{
     background-color: #52b788;
     color: #e9ecef;
     padding: 5px 10px;
     text-decoration: none;
+    margin: 20px 0px;
+    line-height: 30px;
+
 }
 .primary_btn{
     background-color: #0077b6;
     color: #e9ecef;
     padding: 5px 10px;
     text-decoration: none;
+    margin: 20px 0px;
+    line-height: 30px;
+}
+.pagination_btns{
+    margin: 20px 0px;
+    text-align: center;
 }
 .pagination_btn{
     background-color: #6c757d;
@@ -226,4 +242,50 @@ table{
     width: 70%;
     height: 250px;
     resize: none;
+}
+.dashboard_cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    align-items: center;
+    justify-items: center;
+}
+.lightblue_card{
+    background-color: rgb(12, 134, 143);
+    color: white;
+}
+.pink_card{
+    background-color: rgb(177, 43, 88);
+    color: white;
+}
+.purple_card{
+    background-color: purple;
+    color: white;
+}
+.blue_card{
+    background-color: blue;
+    color: white;
+}
+.green_card{
+    background-color: green;
+    color: white;
+}
+.dashhboard_card{
+    position: relative;
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    margin: 10px 7px;
+    border: 0px;
+    box-shadow: 5px 5px 8px #888888;
+}
+.d_card_number{
+    font-size: 32px ;
+}
+.d_card_title{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 24px;
+    text-align: right;
+    line-height: 30px;
 }

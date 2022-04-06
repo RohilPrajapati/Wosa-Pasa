@@ -77,7 +77,7 @@
                 <div class="input-block">
                     <img src="/assets/image/lock-solid.svg">
                     <input class="form_input" id="c_password" name="co_password" id="co_password" type="password" placeholder="Confirm Password">
-                    <i class="far fa-eye eye_icon" id="togglePassword" onclick="cpasswordToggler()"></i>
+                    <i class="far fa-eye eye_icon" id="ctogglePassword" onclick="cpasswordToggler()"></i>
                 </div>
                 <div class="error" id="password_error"></div>
                 <button type="submit">Signup</button>

@@ -20,8 +20,8 @@ function passwordToggler(){
     }
 };
 function cpasswordToggler(){
-    togglePassword = document.getElementById('togglePassword');
-    password = document.getElementById('co_password')
+    togglePassword = document.getElementById('ctogglePassword');
+    password = document.getElementById('c_password')
     // toggle the type attribute
     if (password.getAttribute('type')==='password'){
         password.setAttribute("type", "text");
@@ -107,22 +107,29 @@ function validateRegistration(){
             // console.log("form has been submited");
         }
 }
+
+
 function addQty(){
+    stock = parseInt(document.getElementById('stock').value);
     qty = document.getElementById('qty');
-    if(qty.value == 12){
-        qty.value = 12;
+    if(qty.value == stock){
+        qty.value = stock;
     }else{
     // console.log(qty.value);
     qty.value = parseInt(qty.value) + 1;
     }
+    return false;
 }
+
 function subQty(){
+    stock = parseInt(document.getElementById('stock').value);
     qty = document.getElementById('qty');
-    if(qty.value == 0){
-        qty.value = 0
+    if(qty.value <= 1){
+        qty.value = 1;
     }else{
         qty.value = parseInt(qty.value) - 1;
     }
+    return false;
 }
 
 function categoryFormValidation(){
@@ -139,5 +146,142 @@ function categoryFormValidation(){
     }
     if(is_validate==true){
         c_form.submit()
+    }
+}
+
+function validateAddProduct(){
+    p_name = document.getElementById('name');
+    p_desc = document.getElementById('desc');
+    price = document.getElementById('price');
+    no_of_stock = document.getElementById('num_stock');
+    image = document.getElementById('image');
+
+    p_name_error = document.getElementById('p_name_error');
+    p_desc_error = document.getElementById('p_desc_error');
+    p_price_error = document.getElementById('p_price_error');
+    p_num_stock_error = document.getElementById('p_num_stock_error');
+    p_image_error = document.getElementById('p_image_error');
+    is_validate = true;
+
+    p_name_error.style.display = "none";
+    p_desc_error.style.display = "none";
+    p_price_error.style.display = "none";
+    p_num_stock_error.style.display = "none";
+    p_image_error.style.display = "none";
+    
+    if(p_name.value.trim()==""){
+        p_name_error.innerHTML = "Product Name can't be empty";
+        p_name_error.style.display = "block";
+        is_validate= false;
+    }
+    if(p_desc.value.trim()==""){
+        p_desc_error.innerHTML = "Product detail can't be empty";
+        p_desc_error.style.display = "block";
+        is_validate= false;
+    }
+    if(price.value.trim()==""){
+        p_price_error.innerHTML = "Price can't be empty";
+        p_price_error.style.display = "block";
+        is_validate= false;
+    }
+
+    if(no_of_stock.value.trim()==""){
+        p_num_stock_error.innerHTML = "Number of Stock can't be empty";
+        p_num_stock_error.style.display = "block";
+        is_validate= false;
+    }
+    if(image.value.trim()==""){
+        p_image_error.innerHTML = "Image can't be empty";
+        p_image_error.style.display = "block";
+        is_validate= false;
+    }
+    if(is_validate){
+        document.getElementById('addProductForm').submit();
+    }
+}
+
+function validateUpdateProduct(){
+    p_name = document.getElementById('name');
+    p_desc = document.getElementById('desc');
+    price = document.getElementById('price');
+    no_of_stock = document.getElementById('num_stock');
+
+    p_name_error = document.getElementById('p_name_error');
+    p_desc_error = document.getElementById('p_desc_error');
+    p_price_error = document.getElementById('p_price_error');
+    p_num_stock_error = document.getElementById('p_num_stock_error');
+    is_validate = true;
+
+    p_name_error.style.display = "none";
+    p_desc_error.style.display = "none";
+    p_price_error.style.display = "none";
+    p_num_stock_error.style.display = "none";
+    
+    if(p_name.value.trim()==""){
+        p_name_error.innerHTML = "Product Name can't be empty";
+        p_name_error.style.display = "block";
+        is_validate= false;
+    }
+    if(p_desc.value.trim()==""){
+        p_desc_error.innerHTML = "Product detail can't be empty";
+        p_desc_error.style.display = "block";
+        is_validate= false;
+    }
+    if(price.value.trim()==""){
+        p_price_error.innerHTML = "Price can't be empty";
+        p_price_error.style.display = "block";
+        is_validate= false;
+    }
+
+    if(no_of_stock.value.trim()==""){
+        p_num_stock_error.innerHTML = "Number of Stock can't be empty";
+        p_num_stock_error.style.display = "block";
+        is_validate= false;
+    }
+    if(is_validate){
+        document.getElementById('addProductForm').submit();
+    }
+}
+
+function searchValidation(){
+    query = document.getElementById('search_input');
+    is_validate = true;
+    if(query.value.trim()==""){
+        is_validate= false;
+    }
+    if(is_validate){
+        document.getElementById('seachForm').submit();
+    }
+
+}
+
+function addCartQtyValidation(){
+    stock = parseInt(document.getElementById('stock').value);
+    qty = parseInt(document.getElementById('qty').value);
+    qtyError = document.getElementById('qtyError');
+    qtyError.style.display ='none';
+    is_validate = true;
+    if(qty> stock){
+        qtyError.innerHTML = "Quantity is out of stock";
+        qtyError.style.display = 'block';
+        is_validate = false;
+    }
+    if(is_validate){
+        document.getElementById('addCartForm').submit();
+    }
+}
+function buyProduct(){
+    qty = parseInt(document.getElementById('qty').value);
+    stock = parseInt(document.getElementById('stock').value);
+    form = document.getElementById('addCartForm');
+    is_validate = true;
+    if(qty> stock){
+        qtyError.innerHTML = "Quantity is out of stock";
+        qtyError.style.display = 'block';
+        is_validate = false;
+    }
+    if(is_validate){
+        form.action = '/buyProduct.php'
+        document.getElementById('addCartForm').submit();
     }
 }

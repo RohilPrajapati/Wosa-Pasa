@@ -62,7 +62,9 @@
 </head>
 <body>
     <div class="main_container">
-        <?php require_once 'admin_nav.php'; ?>
+        <?php 
+        $page_title='category';
+        require_once 'admin_nav.php'; ?>
         <div class="container">
                 <?php if(isset($_GET['id'])){
                     $id= $_REQUEST['id'];
