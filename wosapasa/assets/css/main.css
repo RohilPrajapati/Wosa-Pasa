@@ -87,6 +87,7 @@
     line-height: 50px;
     padding: 0px 20px;
     list-style: none;
+    cursor: pointer;
 }
 #nav_icon{
     display: none;
@@ -106,12 +107,15 @@
     display: none;
     padding: 5px 20px;
     list-style: none;
-    border: 0.5px solid #495057;
-    width: 100px;
+    width: 150px;
+    border: 1px dotted black;
+    border-top: none;
     position: absolute;
     right: 0px;
     text-align: center;
     background-color: white;
+    box-shadow: 1px 2px 10px #a3a5a7;
+
 }
 .sub_menu a{
     text-decoration: none;
@@ -123,10 +127,11 @@
 }
 .nav_profile{
     padding: 0px 10px;
+    cursor: fi;
 }
-.nav_profile:hover .sub_menu{
+/* .nav_profile:hover .sub_menu{
     display: block;
-}
+} */
 .sub_nav_item{
     padding: 0px;
 }
@@ -410,7 +415,11 @@
     width: 25%;
 }
 .profile_side_panel{
-    background-color: aliceblue ;
+    position: fixed;
+    top: 85px;
+    right: 110px;
+    width: 300px;
+    background-color: #e9ecef ;
     padding: 20px 10px;
     text-align: center;
     border-radius: 10px;
@@ -543,6 +552,15 @@
     color: white;
     text-decoration: none;
 }
+.cart_buy_form{
+    display: inline-block;
+}
+.cart_form_btn{
+    cursor: pointer;
+    padding: 16px 25px;
+    color: white;
+    border: none;
+}
 .carts{
     width: 100%;
     margin: 20px 0px;
@@ -603,10 +621,14 @@
     color: white;
     background-color: rgb(28, 132, 243);
 }
+.go_btn{
+    color: white;
+    background-color: green;
+}
 
 .order_form{
     width: 70%;
-    margin: 10px auto;
+    margin: 10px auto 50px auto;
 }
 .order_items{
     margin: 30px 0px;
@@ -623,16 +645,22 @@
 }
 
 .order_item_img{
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
 }
 .order_item_title{
     font-size: 24px;
     margin: 10px 0px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: "...";
+    overflow: hidden;
+
 }
 .order_item_text{
     padding: 10px;
     max-height: 150px;
+    min-width: 78%;
     overflow: hidden;
 }
 .order_label{
@@ -651,10 +679,15 @@
 }
 .order_div{
     display: flex;
+    height: 40px;
     justify-content: space-between;
 }
 .order_input_row{
     margin: 10px;
+}
+.link_btn{
+    padding: 10px 30px;
+    margin: 0px;
 }
 .delivery_label{
     display: inline-block;
@@ -674,9 +707,10 @@
     font-size: 24px;
 }
 .order_btn{
-    font-size: 24px;
+    cursor: pointer;
+    font-size: 18px;
     border: none;
-    padding: 5px 40px;
+    padding: 9px 30px;
     color: white;
 }
 .order_row{
@@ -700,9 +734,63 @@
     font-size: 18px;
     font-weight: bold;
 }
+.feedback_content{
+    background-color: #e9ecef;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.feedback_card{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+.feedback_card_action{
+    text-align: right;
+    margin-top: 10px;
+    line-height: 30px;
+}
+.feedback_btn{
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.trasaction_success{
+    background-color: rgba(108, 243, 164, 0.226);
+    color: rgb(6, 134, 6);
+    border-bottom: 4px solid rgb(6, 134, 6);
+    font-size: 32px;
+    text-align: center;
+    padding: 30px 0px;
+}
+.trasaction_fail{
+    background-color: rgba(241, 112, 112, 0.226);
+    color: rgb(222, 53, 53);
+    border-bottom: 4px solid rgb(222, 53, 53);
+    font-size: 32px;
+    text-align: center;
+    padding: 30px 0px;
+}
 
-
-
+.product_list{
+    display: flex;
+    background-color: #e9ecef;
+    box-shadow: 1px 2px 10px #a3a5a7;
+    margin: 10px 0px 20px 0px;
+}
+.myorder_prod_img{
+    width: 120px;
+    height: 100%;
+    vertical-align: middle;
+}
+.morder_date{
+    text-align: right;
+}
+.disable_link{
+    text-decoration: none;
+    color: black;
+}
 
 @media (max-width: 450px) {
     .container{
@@ -791,6 +879,22 @@
         width: 100%;
     }
     .about_text{
+        width: 100%;
+    }
+    .profile_side_panel{
+        display: none;
+    }
+    .sub_menu{
+        display: block;
+        list-style: none;
+        width: 100%;
+        border: none;
+        position: relative;
+        text-align: center;
+        background-color: white;
+        box-shadow: none;
+    }
+    .col_6{
         width: 100%;
     }
 

@@ -15,9 +15,12 @@
             $q_insert = "INSERT INTO users (username, email, password) VALUES ('$username','$email', '$h_password')";
             if ($result = mysqli_query($conn,$q_insert)){
                 // redirectAlertMessage('User has been register','login.php');
+                $title = $username." is register in Wosa: Pasa:";
+                $msg = "Welcome ".$username." to Wosa: Pasa:. Hope you will find the product u are searching in Our Online store.";
+                send_mail($email,$title,$msg);
                 echo "
                 <h3 class='server_success'>
-                User has been register. <a href='login.php'>Login</a>   
+                    User has been register. Mail has been sent About Ur Register. <a href='login.php'>Login</a>   
                 </h3>
                 ";
             }

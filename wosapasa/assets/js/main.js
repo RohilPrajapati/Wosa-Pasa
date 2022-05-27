@@ -285,3 +285,43 @@ function buyProduct(){
         document.getElementById('addCartForm').submit();
     }
 }
+function profileToggler(){
+    submenu = document.getElementById('sub_menu');
+    if(submenu.style.display == 'block'){
+        submenu.style.display = 'none';
+    }else{
+        submenu.style.display = 'block';
+    }
+}
+function validateOrderForm(){
+    username = document.getElementById('name');
+    address = document.getElementById('address');
+    phone_no = document.getElementById('phone_no');
+    nameerror = document.getElementById('nameError');
+    addresserror = document.getElementById('addressError');
+    phoneerror = document.getElementById('phoneError');
+    form = document.getElementById('orderForm');
+    nameerror.style.display = "none";
+    addresserror.style.display = "none";
+    phoneerror.style.display = "none";
+
+    is_validate= true;
+    if(username.value.trim()==""){
+        nameerror.innerHTML = "Name can't be empty";
+        nameerror.style.display = "block";
+        is_validate= false;
+    }
+    if(address.value.trim()==""){
+        addresserror.innerHTML = "Address can't be empty";
+        addresserror.style.display = "block";
+        is_validate= false;
+    }
+    if(phone_no.value.trim()==""){
+        phoneerror.innerHTML = "Phone number can't be empty";
+        phoneerror.style.display = "block";
+        is_validate= false;
+    }
+    if(is_validate){
+        form.submit();
+    }
+}

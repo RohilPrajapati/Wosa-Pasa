@@ -16,7 +16,7 @@
             <div class="about_text">
             <h2 class="aboutus_head">Who we are ?</h2>
                 <p>
-                    Wosa Pasa is an online clothing store which supply variety of clothing for people. It  is a procedure in which the client buys various types of clothing products from the owner of the store  without any online middleman. We provide good quality clothing at a reasonable price. We believe to make a friendly and comfortable environment for the customers where they can easily utilize it.
+                    Wosa: Pasa: is an online clothing store which supply variety of clothing for people. It  is a procedure in which the client buys various types of clothing products from the owner of the store  without any online middleman. We provide good quality clothing at a reasonable price. We believe to make a friendly and comfortable environment for the customers where they can easily utilize it.
                 </p>
             </div>
         </div> 

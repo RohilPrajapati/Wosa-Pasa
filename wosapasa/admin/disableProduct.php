@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <?php require_once 'head.php' ?>
-    <title>DashBoard</title>
+    <title>Disable Product</title>
 </head>
 <body>
     <div class="main_container">
@@ -59,7 +59,7 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Gender</th>
-                    <th>category Name</th>
+                    <th>Category Name</th>
                     <th>Stocks</th>
                     <th>Action</th>
                 </tr>

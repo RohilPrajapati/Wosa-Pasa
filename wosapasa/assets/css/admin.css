@@ -289,3 +289,43 @@ table{
     text-align: right;
     line-height: 30px;
 }
+.feedback_card{
+    width: 90%;
+    margin: 10px 0px;
+    background-color: #6c757d;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+.feedback_card h3{
+    margin: 5px 0px;
+}
+.left_align{
+    text-align: right;
+}
+.payment_card{
+    width: 96%;
+    background-color: #495057;
+    color: white;
+    margin: 20px 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.order_prod_img{
+    height: 120px;
+    width: 120px;
+    border-radius: 10px 0px 0px 10px ;
+}
+.disable_link{
+    text-decoration: none;
+    color: black;
+}
+.product_list{
+    background-color: white;
+    display: flex;
+    margin: 10px 0px;
+    border-radius: 10px;
+}
+.morder_prod_content{
+    margin-left: 20px;
+}

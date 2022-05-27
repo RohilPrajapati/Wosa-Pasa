@@ -1,6 +1,16 @@
+<link rel="stylesheet" href="/assets/css/main.css">
 <?php
     require_once '../config/dbconfig.php';
     require_once '../config/utility.php';
+    session_start();
+    if(isset($_SESSION['id'])){
+        echo "
+        <h3 class='server_error'>
+            You are already login. Please <a href='logout.php'>logout</a> first or go to <a href='dashboard.php'>dashboard</a>
+        </h3>    
+        ";
+        die();
+    }
     if($_POST){
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];

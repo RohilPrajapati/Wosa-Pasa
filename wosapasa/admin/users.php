@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <?php require_once 'head.php' ?>
-    <title>DashBoard</title>
+    <title>User</title>
 </head>
 <body>
     <div class="main_container">

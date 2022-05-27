@@ -25,8 +25,11 @@
         <li class="nav_item <?php if($page == 'home'){echo 'active';} ?>"><a class="nav_link" href="/">Home</a></li>
         <?php if(isset($_SESSION['id'])){?>
             <li class="nav_item nav_item <?php if($page == 'cart'){echo 'active';} ?>"><a class="nav_link" href="/cart.php">Cart</a></li>
-            <li class="nav_item nav_profile <?php if($page == 'profile'){echo 'active';} ?>"><a class="nav_link" href="/account/profile.php"><?= $user['username'] ?></a>
-        <ul class="sub_menu">
+            <li onclick="profileToggler();" class="nav_item nav_profile <?php if($page == 'profile'){echo 'active';} ?>"><span class="nav_link"><?= $user['username'] ?></span>
+        <ul class="sub_menu" id="sub_menu">
+                <li class="sub_nav_item"><a class="nav_link" href="/account/profile.php">Profile</a></li>
+                <li class="sub_nav_item"><a class="nav_link" href="/myorder.php">My Order</a></li>
+                <li class="sub_nav_item"><a class="nav_link" href="/myfeedback.php">My Feedback</a></li>
                 <li class="sub_nav_item"><a class="nav_link" href="/account/logout.php">Logout</a></li>
             </ul>
         </li>

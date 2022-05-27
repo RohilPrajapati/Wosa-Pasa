@@ -32,10 +32,10 @@ if (isset($_GET['p_id'])) {
                         <p><?= $product['description'] ?></p>
                         Stocks : <?= $product['number_of_stock'] ?><br>
                         <form class="detail_view_form" action="addCart.php" id="addCartForm" method="post" onsubmit="event.preventDefault(); addCartQtyValidation()">
-                            <input type="hidden" name="stock" id="stock" value="<?= $product['number_of_stock']?>">
+                            <input type="hidden" name="stock" id="stock" value="<?= $product['number_of_stock'] ?>">
                             <span>Quantity :</span>
                             <button id="sub" class="qty_add_sub_btn" onclick="event.preventDefault(); subQty()">-</button>
-                            <input id="qty" name="qty" class="qty_input" type="text" value="1" readonly>
+                               <input id="qty" name="qty" class="qty_input" type="text" value="1" readonly>
                             <button id="add" class="qty_add_sub_btn" onclick=" event.preventDefault();   addQty()">+</button>
                             <span class="offer-price"> Rs. <?= $product['price'] ?></span><br>
                             <div id="qtyError" class="error"></div>
@@ -49,15 +49,15 @@ if (isset($_GET['p_id'])) {
                                     <input type="hidden" name="product_id" value="<?= $id ?>">
                                     <input type="hidden" name="quickBuy" value="1">
                                     <input class="detailview_btn" name="f_submit" type="submit" value="Add to Cart">
-                                    <input class="detailview_btn buy_btn" name="f_submit" onclick="event.preventDefault(); buyProduct();" type="submit" value="Buy Now">   
+                                    <input class="detailview_btn buy_btn" name="f_submit" onclick="event.preventDefault(); buyProduct();" type="submit" value="Buy Now">
                                 <?php
                                 } else { ?>
                                     <input class="detailview_btn" name="f_submit" type="submit" value="Add to Cart">
-                                    <input class="detailview_btn buy_btn" name="f_submit" onclick="event.preventDefault(); buyProduct();" type="submit" value="Buy Now">   
+                                    <input class="detailview_btn buy_btn" name="f_submit" onclick="event.preventDefault(); buyProduct();" type="submit" value="Buy Now">
                                 <?php
                                 } ?>
                         </form>
-                         
+
                     </div>
                 </div>
 

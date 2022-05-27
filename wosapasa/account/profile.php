@@ -14,6 +14,12 @@
         $user = fetch_user($id,$conn);
     ?>
     <title><?= $user['username'] ?></title>
+    <style>
+        b{
+            display: inline-block;
+            width: 120px;
+        }
+    </style>
 </head>
 <body>
     
@@ -21,30 +27,16 @@
     <div class="container">
         <div class="profile_row">
             <div class="col_6">
-                <h1>Hello <?= $user['username'] ?>, welcome to wosa: pasa: comming soon!</h1>
+            <div class="info">
+                    <b>Username : </b>
+                    <?= $user['username']; ?><br>
+                    <b>E-mail : </b>   
+                    <?= $user['email']; ?><br>
             </div>
-            <div class="col_4 profile_side_panel">
-            <?php if($user['is_admin']==1){
-                ?>
-                    <a href="/admin/dashboard.php" class="side_panel_link">
-                        <div class="side_panel_item">
-                            Admin Dashboard
-                        </div>
-                    </a>
-                <?php 
-                    }
-                ?>
-                <a href="#" class="side_panel_link">
-                    <div class="side_panel_item">
-                        My Feedbacks
-                    </div>
-                </a>
-                <a href="/account/logout.php" class="side_panel_link">
-                    <div class="side_panel_item">
-                        Logout
-                    </div>
-                </a>
             </div>
+            <?php
+                require_once '../assets/component/sidebar_profile.php'
+            ?>
         </div>
     </div>
 </body>

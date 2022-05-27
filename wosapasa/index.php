@@ -37,9 +37,8 @@ require_once 'config/dbconfig.php';
                         <img class="carousel_img" src="/assets/image/commingsoon.jpg" alt="">
                     </div>
                 </div>
-                <button class="carousel_prev" id="prev">
-                    << /button>
-                        <button class="carousel_next" id="next">></button>
+                <button class="carousel_prev" id="prev"><</button>
+                <button class="carousel_next" id="next">></button>
             </div>
         </div>
         <?php

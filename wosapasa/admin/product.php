@@ -6,7 +6,7 @@ require_once 'checkadmin.php';
 
 <head>
     <?php require_once 'head.php' ?>
-    <title>DashBoard</title>
+    <title>Product</title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ require_once 'checkadmin.php';
                             <th>Name</th>
                             <th>Price</th>
                             <th>Gender</th>
-                            <th>category Name</th>
+                            <th>Category Name</th>
                             <th>Stocks</th>
                             <th>Action</th>
                         </tr>

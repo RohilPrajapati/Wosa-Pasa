@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <?php
+
     session_start();
     if(isset($_SESSION['id'])){
         echo "
             <h3 class='server_error'>   
-                You are already login !!
+                You are already login. Please <a href='logout.php'>logout</a> first or go to <a href='/index.php'>Home</a>
             </h3>
             ";
             die();

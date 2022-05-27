@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <?php require_once 'head.php' ?>
-    <title>Order</title>
+    <title>Order History</title>
 </head>
 <body>
     <div class="main_container">
@@ -13,10 +13,10 @@
         $page_title='order';
         require_once 'admin_nav.php'; ?>
         <div class="container">
-            <input type="button" onclick="window.location.href='orderHistory.php'" value="Order History" class="btn">
-            <h1 class="header">Pending Order</h1>
+            <input type="button" onclick="window.location.href='order.php'" value="Pending Order" class="btn">
+            <h1 class="header">Deliver Order</h1>
             <?php
-                $q_order = "SELECT * FROM payments inner join users on payments.user_id = users.user_id where delivery_status = 0 and cancel_status = 0";
+                $q_order = "SELECT * FROM payments inner join users on payments.user_id = users.user_id where delivery_status = 1 order by payment_id desc";
                 $result = mysqli_query($conn,$q_order);
                 while($payment= mysqli_fetch_assoc($result)){
                     ?>
@@ -57,7 +57,7 @@
                             }
                         ?>
                         <div class="action_btn">
-                            <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="primary_btn">Deliver</a>
+                            <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="danger_btn">Deliver Return</a>
                         </div>
                         </div>
                         <?php
