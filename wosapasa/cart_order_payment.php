@@ -20,37 +20,40 @@ if ($_POST) {
         $q_cart = "select * from carts where user_id = '$user_id'";
         $result = mysqli_query($conn, $q_cart);
         $order_status = 1;
-        while ($cart = mysqli_fetch_assoc($result)){
-            $q_product = "SELECT * FROM products where product_id =".$cart['product_id'];
-            $r_product = mysqli_query($conn,$q_product);
+        while ($cart = mysqli_fetch_assoc($result)) {
+            $q_product = "SELECT * FROM products where product_id =" . $cart['product_id'];
+            $r_product = mysqli_query($conn, $q_product);
             $product = mysqli_fetch_assoc($r_product);
-            $q_insert_order_item = "INSERT INTO orders (quantity,price,product_id,payment_id,user_id) values ('".$cart['quantity']."','".$product['price']."','".$cart['product_id']."','" . $payment['payment_id'] . "','" . $_SESSION['id'] . "')";
-            if(mysqli_query($conn,$q_insert_order_item)){
-                $stock = $product['number_of_stock'] - $qty;
-                $q_update_product = "UPDATE products SET number_of_stock = '$stock' where product_id = '$product_id'";
-                if(mysqli_query($conn, $q_update_product)){
-                    
-                }else{
+            $q_insert_order_item = "INSERT INTO orders (quantity,price,product_id,payment_id,user_id) values ('" . $cart['quantity'] . "','" . $product['price'] . "','" . $cart['product_id'] . "','" . $payment['payment_id'] . "','" . $_SESSION['id'] . "')";
+            if ($product['number_of_stock'] > $qty) {
+                if (mysqli_query($conn, $q_insert_order_item)) {
+                    $stock = $product['number_of_stock'] - $qty;
+                    $q_update_product = "UPDATE products SET number_of_stock = '$stock' where product_id = '$product_id'";
+                    if (mysqli_query($conn, $q_update_product)) {
+                    } else {
+                        $order_status = 0;
+                    }
+                } else {
                     $order_status = 0;
                 }
-            }else{
+            } else {
                 $order_status = 0;
             }
         }
-        if($order_status == 1){
+        if ($order_status == 1) {
             $q_delete_cart = "DELETE FROM carts WHERE user_id = '$user_id';";
-            if(mysqli_query($conn,$q_delete_cart)){
+            if (mysqli_query($conn, $q_delete_cart)) {
                 if ($payment_method == 'esewa') {
                     pay_esewa($total, $payment_uid);
                 } else {
                     echo "Order Have been placed";
                 }
             }
-        }else{
-            $q_cancel_order = "DELETE FROM orders WHERE payment_id  = '".$payment['payment_id']."';";
-            if(mysqli_query($conn,$q_cancel_order)){
-                $q_delete_payment = "DELETE FROM payments WHERE payment_id  = '".$payment['payment_id']."';";
-                if(mysqli_query($conn,$q_delete_payment)){
+        } else {
+            $q_cancel_order = "DELETE FROM orders WHERE payment_id  = '" . $payment['payment_id'] . "';";
+            if (mysqli_query($conn, $q_cancel_order)) {
+                $q_delete_payment = "DELETE FROM payments WHERE payment_id  = '" . $payment['payment_id'] . "';";
+                if (mysqli_query($conn, $q_delete_payment)) {
                     echo "Order is not placed ! Please Try again";
                 }
             }

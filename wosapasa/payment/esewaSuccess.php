@@ -43,6 +43,7 @@ if ($_GET && isset($_REQUEST["refId"])) {
             where payment_uid = '" .$purchaseData["payment_uid"]."'" ;
             if(mysqli_query($conn, $sql)) {
                 echo "<div class='trasaction_success'>Transaction completed successfully</div>";
+                echo "Order have been placed";
                 header("refresh:3;url=/myorder.php");
             } else {
                 echo "<div class='trasaction_fail'>Some problem occurred while saving the request in our end. Please contact the administrator.</div>";

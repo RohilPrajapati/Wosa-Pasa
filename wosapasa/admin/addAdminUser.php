@@ -17,10 +17,10 @@ if ($_POST) {
         if ($result = mysqli_query($conn, $q_insert)) {
             echo "
                 <h3 class='server_success'>
-                    Admin user has been register.</a>
+                    Admin user has been Created.</a>
                 </h3>
                 ";
-            header('refresh:2;url=users.php');
+                header('refresh:2;url=users.php');
         } else {
             echo "
                 <h3 class='server_error'>

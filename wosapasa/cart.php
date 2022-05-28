@@ -46,7 +46,6 @@ require_once 'config/utility.php';
                         <div class="cart_action">
                             <a href="detailview.php?p_id=<?= $cart_product['product_id'] ?>" class="cart_btn primary_btn">View Product</a>
                             <a href="deleteCartItem.php?cart_id=<?= $cart_product['cart_id'] ?>" class="cart_btn danger_btn">Remove</a>
-                            <a href="#" class="cart_btn buy_btn">Buy Product</a>
                         </div>
                     </div>
                     <?php $total = $total + ($cart_product['price'] * $cart_product['quantity']) ?>

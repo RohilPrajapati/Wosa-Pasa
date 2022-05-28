@@ -15,6 +15,7 @@
     width: 20%;
     height: 100%;
     text-align: center;
+    box-shadow: 2px 1px 10px #a3a5a7;
 }
 
 .admin_nav h1{
@@ -328,4 +329,9 @@ table{
 }
 .morder_prod_content{
     margin-left: 20px;
+}
+.offer_price{
+    color: rgb(255, 123, 0);
+    line-height: 30px;
+    font-size: 18px;
 }

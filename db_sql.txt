@@ -87,3 +87,11 @@ CREATE TABLE orders(
 	FOREIGN KEY (`payment_id`) REFERENCES payments(`payment_id`),
 	FOREIGN KEY (`user_id`) REFERENCES users(`user_id`)
 );
+
+
+select count(payment_id) total_order,
+	(select count(product_id) total_product from products where active_status=1) as total_product,
+	(select sum(total_amt) sale_amt from payments where delivery_status=1) as sale_amt,
+	(select sum(number_of_stock) total_price from products where active_status=1) as total_stock,
+	(select count(c_id) total_category from categories where status=1) as total_category
+from payments where delivery_status = 0;

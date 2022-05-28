@@ -8,10 +8,10 @@
         <div class="footer_col">
             <h3 class="footer_header">Categories</h3>
             <ul>
-                <li><a href="" class="footer_link">Shirts</a></li>
-                <li><a href="" class="footer_link">Jeans</a></li>
-                <li><a href="" class="footer_link">Jackets</a></li>
-                <li><a href="" class="footer_link">T-Shirt</a></li>
+                <li><a href="/category.php?id=13" class="footer_link">Shirts</a></li>
+                <li><a href="/category.php?id=7" class="footer_link">Jeans</a></li>
+                <li><a href="/category.php?id=6" class="footer_link">Jackets</a></li>
+                <li><a href="/category.php?id=8" class="footer_link">T-Shirt</a></li>
             </ul>
         </div>
         <div class="footer_col">

@@ -56,6 +56,7 @@
                             
                             }
                         ?>
+                        <div class="offer_price">Rs. <?= $payment['total_amt'] ?></div>
                         <div class="action_btn">
                             <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="primary_btn">Deliver</a>
                         </div>

@@ -26,7 +26,7 @@ if ($_POST) {
         $product = mysqli_fetch_assoc($result);
 
         if ($product['number_of_stock'] >= $qty) {
-            $q_insert_order_item = "INSERT INTO orders (quantity,price,product_id,payment_id,user_id) values ('$qty','".$product['price']."','$product_id','" . $payment['payment_id'] . "','" . $_SESSION['id'] . "')";
+            $q_insert_order_item = "INSERT INTO orders (quantity,price,product_id,payment_id,user_id) values ('$qty','" . $product['price'] . "','$product_id','" . $payment['payment_id'] . "','" . $_SESSION['id'] . "')";
             if (mysqli_query($conn, $q_insert_order_item)) {
                 $stock = $product['number_of_stock'] - $qty;
                 $q_update_product = "UPDATE products SET number_of_stock = '$stock' where product_id = '$product_id'";
@@ -34,21 +34,20 @@ if ($_POST) {
                     if ($payment_method == 'esewa') {
                         pay_esewa($total, $payment_uid);
                     } else {
-                        echo "Order Have been placed";
+                        echo "<div class='server_success'>Order Have been placed</div>";
                         header("refresh:4;url=myorder.php");
                     }
                 } else {
-                    echo "Fail  to update the stock";
+                    echo "<div class='server_error'>Fail  to update the stock</div>";
                 }
             } else {
-                echo "Failed to Placed Order";
+                echo "<div class='server_error'>Failed to Placed Order</div>";
             }
         } else {
-            echo "Out of stock fail to place order";
+            echo "<div class='server_error'>Out of stock fail to place order</div>";
         }
     } else {
-        echo "fail to insert";
+        echo "<div class='server_error'>fail to insert</div>";
         echo $conn->error;
     }
-    
 }
