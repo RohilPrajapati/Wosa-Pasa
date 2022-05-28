@@ -1,6 +1,7 @@
 <?php
 require_once 'config/dbconfig.php';
 require_once 'config/utility.php';
+require_once './auth_user.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

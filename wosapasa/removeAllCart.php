@@ -1,6 +1,7 @@
 <?php
     require_once 'auth_user.php';
     require_once 'config/dbconfig.php';
+    require_once './auth_user.php';
     $user_id = $_SESSION['id'];
     $q_cart = "SELECT * from carts where user_id = '$user_id'";
     if(mysqli_query($conn,$q_cart)){
