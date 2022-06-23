@@ -33,8 +33,10 @@ if ($_POST) {
                 if (mysqli_query($conn, $q_update_product)) {
                     if ($payment_method == 'esewa') {
                         pay_esewa($total, $payment_uid);
+                        order_mail($conn,$payment_uid,$user['email']);
                     } else {
                         echo "<div class='server_success'>Order Have been placed</div>";
+                        order_mail($conn,$payment_uid,$user['email']);
                         header("refresh:4;url=myorder.php");
                     }
                 } else {

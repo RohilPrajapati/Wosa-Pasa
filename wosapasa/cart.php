@@ -37,7 +37,7 @@ require_once './auth_user.php';
                     <div class="cart">
                         <img class="cart_img" src="assets/image/upload/<?= $cart_product['image'] ?>" alt="">
                         <div class="cart_text">
-                            <h3><?= $cart_product['title'] ?></h3>
+                            <h3 class="cart_product_title"><?= $cart_product['title'] ?></h3>
                             <p><?= $cart_product['description'] ?></p>
                             <div class="cart_price">
                                 <span>Quantity: <?= $cart_product['quantity'] ?></span>

@@ -45,8 +45,11 @@ if ($_POST) {
             if (mysqli_query($conn, $q_delete_cart)) {
                 if ($payment_method == 'esewa') {
                     pay_esewa($total, $payment_uid);
+                    order_mail($conn,$payment_uid,$user['email']);
                 } else {
-                    echo "Order Have been placed";
+                    echo "<div class='server_success'>Order Have been placed</div>";
+                    order_mail($conn,$payment_uid,$user['email']);
+                    header("refresh:3;url=/myorder.php");
                 }
             }
         } else {

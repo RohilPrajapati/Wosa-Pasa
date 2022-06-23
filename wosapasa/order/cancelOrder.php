@@ -51,7 +51,7 @@
                             $r_order_prod = mysqli_query($conn,$q_order);
                             while ($order = mysqli_fetch_assoc($r_order_prod)){
                         ?>
-                        <a href="detailview.php?p_id=<?= $order['product_id'] ?>" class="disable_link">
+                        <a href="/detailview.php?p_id=<?= $order['product_id'] ?>" class="disable_link">
                             <div class = "product_list">
                                 <img class="myorder_prod_img" src="../assets/image/upload/<?= $order['image'] ?>">
                                 <div class="morder_prod_content">
@@ -71,9 +71,6 @@
                         ?>
                         <div class="feedback_card_action">
                             <span class="offer-price">Total : Rs. <?= $payment['total_amt'] ?></span><br>
-                            <?php if($payment['payment_status']==0){ ?>
-                                <a href="/payment/makePayment.php?amt=<?= $payment['total_amt'] ?>&pid=<?= $payment['payment_uid'] ?>" class="go_btn feedback_btn">Pay eSewa</a>
-                            <?php } ?>
                         </div>
                     </div>
                     <?php

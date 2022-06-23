@@ -50,7 +50,7 @@
                             $r_order_prod = mysqli_query($conn,$q_order);
                             while ($order = mysqli_fetch_assoc($r_order_prod)){
                         ?>
-                        <a href="detailview.php?p_id=<?= $order['product_id'] ?>" class="disable_link">
+                        <a href="/detailview.php?p_id=<?= $order['product_id'] ?>" class="disable_link">
                             <div class = "product_list">
                                 <img class="myorder_prod_img" src="../assets/image/upload/<?= $order['image'] ?>">
                                 <div class="morder_prod_content">

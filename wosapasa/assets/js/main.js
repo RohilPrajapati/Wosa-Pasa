@@ -325,3 +325,14 @@ function validateOrderForm(){
         form.submit();
     }
 }
+function advance_search(){
+    search_query = document.getElementById('search_input').value;
+    max = Number(document.getElementById('max_price').value);
+    min = Number(document.getElementById('min_price').value);
+    if(max < min){
+        document.getElementById('as_price_error').innerHTML = "Maximum Price Can't be less then Minimum Price";
+    }else{
+        document.getElementById('a_search_input').value = search_query;
+        document.getElementById('ad_search').submit();  
+    }
+}

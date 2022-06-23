@@ -36,7 +36,7 @@
                         <p><?= $feedback['message'] ?></p>
                         <div class="feedback_card_action">
                             <a class="primary_btn feedback_btn" href="/updatefeedback.php?id=<?= $feedback['fb_id'] ?>">Update</a>
-                            <a class="danger_btn feedback_btn" href="/deletefeedback.php?id=<?= $feedback['fb_id'] ?>">Delete</a>
+                            <a class="danger_btn feedback_btn" href="/deletefeedback.php?id=<?= $feedback['fb_id'] ?>" onclick="return confirm('Confirm you want to delete Feedback ?')">Delete</a>
                         </div>
                     </div>
                     <?php

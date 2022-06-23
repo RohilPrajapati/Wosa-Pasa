@@ -11,6 +11,9 @@ if (isset($_GET['q'])) {
 <body>
     <?php
         require_once 'assets/component/topnav.php';
+        ?>
+        <div class="container">
+        <?php require_once 'assets/component/filter.php';
         $query = addslashes($_GET['q']);
         $q_search = "SELECT  product_id,title,image  ,price from products where title like '%$query%' or gender like '%$query%' or keyword like '%$query%' and active_status=1 order by rand()";
         $result = mysqli_query($conn,$q_search);
@@ -21,7 +24,7 @@ if (isset($_GET['q'])) {
             </div>";
         }else{
     ?>
-    <div class="container">
+    
         <div class="product_cards">
         <?php while($product = mysqli_fetch_assoc($result)){ ?>
             <div class="card">
@@ -37,13 +40,16 @@ if (isset($_GET['q'])) {
                     </div>
                 </a>
             </div>
-            <?php } ?>
+            <?php } 
+            ?>
         </div>
+        <?php
+        }
+        ?>
     </div>
 </body>
 </html>
 <?php
-    }
 }else{
     echo "
     <div class='server_error'>

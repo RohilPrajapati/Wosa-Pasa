@@ -18,7 +18,8 @@
     <ul class="nav_menu" id="nav_menu">
         <form action="/search.php" id="seachForm" class="search" onsubmit="event.preventDefault(); searchValidation()">
             <input type="text" id="search_input" name ="q" class="searchBox" placeholder="Search" 
-                value="<?php if(isset($_GET['q'])){ echo $_GET['q']; }?>"
+                value="<?php if(isset($_GET['q'])){ echo $_GET['q']; }else if(isset($_GET['query'])){ echo $_GET['query'];}
+                    ?>"
             >
             <input class="searchIcon" style="font-family: FontAwesome" value="&#xf002;" type="submit">
         </form>
@@ -27,6 +28,14 @@
             <li class="nav_item nav_item <?php if($page == 'cart'){echo 'active';} ?>"><a class="nav_link" href="/cart.php">Cart</a></li>
             <li onclick="profileToggler();" class="nav_item nav_profile <?php if($page == 'profile'){echo 'active';} ?>"><span class="nav_link"><?= $user['username'] ?></span>
         <ul class="sub_menu" id="sub_menu">
+                <li class="sub_nav_item"><a class="nav_link" href="/account/profile.php">Profile</a></li>
+                <li class="sub_nav_item"><a class="nav_link" href="/myorder.php">My Order</a></li>
+                <li class="sub_nav_item"><a class="nav_link" href="/myfeedback.php">My Feedback</a></li>
+                <li class="sub_nav_item"><a class="nav_link" href="/account/logout.php">Logout</a></li>
+            </ul>
+        </li>
+        <ul class="mb_view_menu">
+                <li class="sub_nav_item"><a class="nav_link" href="/categorylist.php">Category List</a></li>
                 <li class="sub_nav_item"><a class="nav_link" href="/account/profile.php">Profile</a></li>
                 <li class="sub_nav_item"><a class="nav_link" href="/myorder.php">My Order</a></li>
                 <li class="sub_nav_item"><a class="nav_link" href="/myfeedback.php">My Feedback</a></li>

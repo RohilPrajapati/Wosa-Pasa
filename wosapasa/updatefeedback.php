@@ -24,8 +24,8 @@
 
     }
     else if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $q_feedback = "SELECT * from feedbacks where fb_id = '$id'";
+        $f_id = $_GET['id'];
+        $q_feedback = "SELECT * from feedbacks where fb_id = '$f_id'";
         $result = mysqli_query($conn,$q_feedback);
         $feedback = mysqli_fetch_assoc($result);
 ?>
@@ -41,7 +41,7 @@
         <h1 class="header">Update Feedback</h1>
         <form action="" method="post" class="feedback_form" >
             <input name="user_id" type="hidden" value="<?= $_SESSION['id'] ?>"><br>
-            <input name="fb_id" type="hidden" value="<?= $id ?>"><br>
+            <input name="fb_id" type="hidden" value="<?= $f_id ?>"><br>
             <input class="feedback_input" name="title" type="text" placeholder="Title/Issue" value="<?= $feedback['title'] ?>"><br>
             <textarea class="feedback_textarea" name="message" id="" placeholder = "Describe Message"><?= $feedback['message'] ?></textarea><br>
             <input class="btn" type="submit" value="Update Feedback">

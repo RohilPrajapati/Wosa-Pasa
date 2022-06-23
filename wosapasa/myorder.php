@@ -73,7 +73,7 @@
                             <?php if($payment['payment_status']==0){ ?>
                                 <a href="/payment/makePayment.php?amt=<?= $payment['total_amt'] ?>&pid=<?= $payment['payment_uid'] ?>" class="go_btn feedback_btn">Pay eSewa</a>
                             <?php } ?>
-                            <a class="danger_btn feedback_btn" href="/order/cancel.php?pid=<?= $payment['payment_id'] ?>">Cancel</a>
+                            <a class="danger_btn feedback_btn" href="/order/cancel.php?pid=<?= $payment['payment_id'] ?>" onclick="return confirm('Confirm you want to cancel order ?')">Cancel</a>
                         </div>
                     </div>
                     <?php
