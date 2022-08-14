@@ -265,7 +265,7 @@
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-auto-flow: row dense;
+    grid-auto-flow: row;
     /* background-color: gray; */
     text-align: center;
     grid-row: auto;

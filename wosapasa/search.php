@@ -14,7 +14,7 @@ if (isset($_GET['q'])) {
         ?>
         <div class="container">
         <?php require_once 'assets/component/filter.php';
-        $query = addslashes($_GET['q']);
+        $query = addslashes($_GET['q']); 
         $q_search = "SELECT  product_id,title,image  ,price from products where title like '%$query%' or gender like '%$query%' or keyword like '%$query%' and active_status=1 order by rand()";
         $result = mysqli_query($conn,$q_search);
         if(mysqli_num_rows($result)==0){    
