@@ -183,12 +183,24 @@ function validateAddProduct(){
         p_price_error.innerHTML = "Price can't be empty";
         p_price_error.style.display = "block";
         is_validate= false;
+    }else{
+        if(Number(no_of_stock.value)<=0){
+            p_price_error.innerHTML = "Price can't be less then 0 or equal to 0";
+            p_price_error.style.display = "block";
+            is_validate= false;
+        }
     }
 
     if(no_of_stock.value.trim()==""){
         p_num_stock_error.innerHTML = "Number of Stock can't be empty";
         p_num_stock_error.style.display = "block";
         is_validate= false;
+    }else{
+        if(Number(no_of_stock.value)<0){
+            p_num_stock_error.innerHTML = "Number of Stock can't be less then 0";
+            p_num_stock_error.style.display = "block";
+            is_validate= false;
+        }
     }
     if(image.value.trim()==""){
         p_image_error.innerHTML = "Image can't be empty";

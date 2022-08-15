@@ -58,7 +58,7 @@
                         ?>
                         <div class="offer_price">Rs. <?= $payment['total_amt'] ?></div>
                         <div class="action_btn">
-                            <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="primary_btn"  onclick="return confirm('The delivery is Unpaid are u share u want ta update payment status also ?')" >Deliver</a>
+                            <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="primary_btn"  onclick="return confirm('Confirm the delivery ?')" >Deliver</a>
                             <!-- <a href="updateDeliver.php?id=<?= $payment['payment_id'] ?>" class="primary_btn">Deliver</a> -->
                         </div>
                         </div>
