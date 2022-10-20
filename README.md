@@ -1,7 +1,17 @@
 # project_I
 Wosa: Pasa:(E-commerce) is an online clothing store web application build using php, html, css, js.
+
+## Objective
+
+- To upgrade the offline clothing store into an online clothing store
+- To display the availability of products and their information
+- To ·  provide online transaction methodology
+- To provide a comfortable customer experience
+- Admin panel will help admin with monitoring sales info, and management of business.
+
 Feature of Wosa: Pasa:
-- wo
+- Admin Panel to monitor all the Sales
+- Mobile Responsive
 
 
 ## Screen Shot of Project
