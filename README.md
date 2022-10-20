@@ -8,12 +8,30 @@ college project
 ### Home page:
 ![Home Page](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/landingpage.jpg)
 
-### cart page:
+### Cart Page:
 ![cart](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/cart.jpg)
 
 
-### search page:
+### Search Page:
 ![search](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/search.jpg)
 
-### Advance search page:
+### Advance Search Page:
 ![advance search](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/adv_search.jpg)
+
+### Feedback:
+![Feedback](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/feedback.jpg)
+
+### Profile:
+![profile](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/profile.jpg)
+
+### Order:
+![order](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/order.jpg)
+
+### Detail Product:
+![detail product view](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/detail_product_view.jpg)
+
+### Admin Dashboard:
+![admin dashboard](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_dashboard.jpg)
+
+### Admin Product:
+![advance search](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_product.jpg)
