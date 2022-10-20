@@ -1,9 +1,10 @@
 # project_I
-college project
+Wosa: Pasa:(E-commerce) is an online clothing store web application build using php, html, css, js.
+Feature of Wosa: Pasa:
+- wo
 
 
-## Database Design 
-[link](https://app.dbdesigner.net/designer/schema/500533)
+## Screen Shot of Project
 
 ### Home page:
 ![Home Page](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/landingpage.jpg)
@@ -33,5 +34,33 @@ college project
 ### Admin Dashboard:
 ![admin dashboard](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_dashboard.jpg)
 
+### Admin category:
+![admin category](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_category.jpg)
+
 ### Admin Product:
-![advance search](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_product.jpg)
+![admin product](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_product.jpg)
+
+### Admin Add Product:
+![add product](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_addproduct.jpg)
+
+### Admin Update Product:
+![update product](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_update.jpg)
+
+### Admin disable Product:
+![disable product](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_disable_product.jpg)
+
+### Admin User List View:
+![admin user list view](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_user.jpg)
+
+### Admin add Admin User View:
+![add admin user](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_add_admin_user.jpg)
+
+### Admin Order View:
+![admin order view](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_order.jpg)
+
+### Admin delivery order View:
+![admin delivery order view](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_delivery_order.jpg)
+
+
+### Admin Feedback View:
+![admin Feedback View](https://raw.githubusercontent.com/RohilPrajapati/Wosa-Pasa/main/screenshot/admin_feedback.jpg)
